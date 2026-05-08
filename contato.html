@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Entre em contato com a DevBakery. Estamos aqui para ajudar!"
+    />
+    <title>Contato — DevBakery</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">🥐</div>
+          Dev<span>Bakery</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-theme" aria-label="Alternar tema">🌙</button>
+          <a href="pedidos.html" class="btn-nav">🛍️ Fazer Pedido</a>
+          <button
+            class="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html">🏠 Início</a>
+      <a href="index.html#produtos">🍞 Produtos</a>
+      <a href="index.html#sobre">💛 Sobre</a>
+      <a href="pedidos.html">🛍️ Pedidos</a>
+      <a href="feedback.html">⭐ Feedback</a>
+      <a href="cadastro.html">👤 Cadastro</a>
+      <a href="contato.html" class="active">📞 Contato</a>
+    </nav>
+
+    <main>
+      
+      <header class="page-hero">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Navegação de caminho">
+            <a href="index.html">Início</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Contato</span>
+          </nav>
+          <h1>Entre em Contato</h1>
+          <p>
+            Tem alguma dúvida, sugestão ou pedido especial? Adoramos conversar
+            com nossos clientes!
+          </p>
+        </div>
+      </header>
+
+      
+      <section aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="contact-grid">
+            
+            <aside aria-label="Informações de contato">
+              <div class="reveal-left">
+                <h2 id="contact-heading">Fale com a gente</h2>
+                <p>
+                  Estamos disponíveis de segunda a sábado, das 6h às 20h.
+                  Responderemos o mais rápido possível!
+                </p>
+
+                <div class="contact-items">
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">📍</div>
+                    <div class="contact-detail">
+                      <strong>Endereço</strong>
+                      <span
+                        >Rua Gastão da Cunha, 123 — Centro<br />São Paulo – SP,
+                        01234-567</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">📞</div>
+                    <div class="contact-detail">
+                      <strong>Telefone / WhatsApp</strong>
+                      <span>(21) 99999-9999</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">📧</div>
+                    <div class="contact-detail">
+                      <strong>E-mail</strong>
+                      <span>contato@devbakery.com.br</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">🕐</div>
+                    <div class="contact-detail">
+                      <strong>Horário de Funcionamento</strong>
+                      <span>Seg–Sáb: 6h às 20h<br />Domingo: 7h às 14h</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="map-placeholder"
+                  role="img"
+                  aria-label="Mapa de localização — Rua Gastão da Cunha, 123"
+                >
+                  🗺️
+                  <span>Rua Gastão da Cunha, 123 — Centro, SP</span>
+                </div>
+              </div>
+            </aside>
+
+            
+            <div class="reveal-right">
+              <div class="form-card">
+                <h2 class="form-title">Envie sua mensagem</h2>
+                <p class="form-subtitle">
+                  Preencha os campos abaixo e entraremos em contato em breve.
+                </p>
+
+                <form
+                  novalidate
+                  data-modal="modalContato"
+                  aria-label="Formulário de contato"
+                >
+                  <div class="form-grid">
+                    <div class="form-group full">
+                      <label for="nome">
+                        Nome Completo
+                        <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Seu nome completo"
+                        required
+                        autocomplete="name"
+                        aria-required="true"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">
+                        E-mail
+                        <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seu@email.com"
+                        required
+                        autocomplete="email"
+                        aria-required="true"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="telefone">Telefone</label>
+                      <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(21) 99999-9999"
+                        pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                        autocomplete="tel"
+                        aria-describedby="telefone-hint"
+                      />
+                      <small
+                        id="telefone-hint"
+                        style="color: var(--text-muted); font-size: 0.8rem"
+                        >Formato: (21) 99999-9999</small
+                      >
+                    </div>
+
+                    <div class="form-group full">
+                      <label for="assunto">
+                        Assunto
+                        <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <select
+                        id="assunto"
+                        name="assunto"
+                        required
+                        aria-required="true"
+                      >
+                        <option value="" disabled selected>
+                          Selecione um assunto…
+                        </option>
+                        <option value="pedido">🛍️ Pedido Especial</option>
+                        <option value="encomenda">🎂 Encomenda de Bolo</option>
+                        <option value="duvida">❓ Dúvida sobre Produtos</option>
+                        <option value="elogio">💛 Elogio</option>
+                        <option value="reclamacao">⚠️ Reclamação</option>
+                        <option value="parceria">🤝 Parceria Comercial</option>
+                        <option value="outro">💬 Outro</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group full">
+                      <label for="mensagem">
+                        Mensagem
+                        <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        placeholder="Descreva sua mensagem com o máximo de detalhes possível…"
+                        required
+                        aria-required="true"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <p
+                    style="
+                      font-size: 0.82rem;
+                      color: var(--text-muted);
+                      margin-top: 16px;
+                    "
+                  >
+                    <span style="color: var(--secondary)">*</span> Campos
+                    obrigatórios
+                  </p>
+
+                  <button type="submit" class="btn-submit">
+                    📨 Enviar Mensagem
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🥐</div>
+            Dev<span style="color: var(--accent)">Bakery</span>
+          </a>
+          <p>
+            Pão artesanal com sabor, tradição e carinho. Desde 2018 aquecendo as
+            manhãs da cidade.
+          </p>
+          <div class="footer-social">
+            <a class="social-btn" href="#" aria-label="Instagram">📷</a>
+            <a class="social-btn" href="#" aria-label="Facebook">👍</a>
+            <a class="social-btn" href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <nav class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+          </ul>
+        </nav>
+        <address class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="#">📍 Rua Gastão da Cunha, 123</a></li>
+            <li><a href="tel:+5511999999999">📞 (21) 99999-9999</a></li>
+            <li>
+              <a href="mailto:contato@devbakery.com.br"
+                >📧 contato@devbakery.com.br</a
+              >
+            </li>
+          </ul>
+        </address>
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul>
+            <li><a href="#">Seg–Sáb: 6h às 20h</a></li>
+            <li><a href="#">Domingo: 7h às 14h</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 DevBakery. Feito com 🧡 e muito fermento.</p>
+      </div>
+    </footer>
+
+    
+    <div
+      class="modal-overlay"
+      id="modalContato"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalContatoTitle"
+    >
+      <div class="modal">
+        <div class="modal-icon-wrap" aria-hidden="true">✅</div>
+        <h3 id="modalContatoTitle">Mensagem Enviada!</h3>
+        <p>
+          Obrigado por entrar em contato,
+          <strong>sua mensagem foi recebida com sucesso</strong>! Nossa equipe
+          irá responder em até 24 horas úteis.
+        </p>
+        <button class="modal-close" onclick="closeModal('modalContato')">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
