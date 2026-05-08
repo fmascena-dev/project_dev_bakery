@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Deixe seu feedback sobre a DevBakery. Sua opinião nos ajuda a melhorar!"
+    />
+    <title>Feedback — DevBakery</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* star rating layout fix */
+      .star-rating {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+      .star-rating label:hover,
+      .star-rating label:hover ~ label {
+        color: var(--accent);
+      }
+      .star-rating input:checked ~ label {
+        color: var(--accent);
+      }
+
+      .rating-display {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border: 1.5px solid var(--border);
+      }
+
+      .rating-label-text {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        transition: all 0.3s;
+      }
+
+      .feedback-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 48px;
+      }
+
+      .feedback-info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        text-align: center;
+        transition: all var(--transition);
+      }
+
+      .feedback-info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px var(--shadow);
+        border-color: var(--primary);
+      }
+
+      .feedback-info-card .icon {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      .feedback-info-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      .feedback-info-card p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 640px) {
+        .feedback-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">🥐</div>
+          Dev<span>Bakery</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="feedback.html" class="active">Feedback</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-theme" aria-label="Alternar tema">🌙</button>
+          <a href="pedidos.html" class="btn-nav">🛍️ Fazer Pedido</a>
+          <button
+            class="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html">🏠 Início</a>
+      <a href="index.html#produtos">🍞 Produtos</a>
+      <a href="index.html#sobre">💛 Sobre</a>
+      <a href="pedidos.html">🛍️ Pedidos</a>
+      <a href="feedback.html" class="active">⭐ Feedback</a>
+      <a href="cadastro.html">👤 Cadastro</a>
+      <a href="contato.html">📞 Contato</a>
+    </nav>
+
+    <main>
+      
+      <header class="page-hero">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Caminho da página">
+            <a href="index.html">Início</a>
+            <span>›</span>
+            <span aria-current="page">Feedback</span>
+          </nav>
+          <h1>Sua Opinião Importa</h1>
+          <p>
+            Nos ajude a melhorar! Compartilhe sua experiência com nossos
+            produtos e serviços.
+          </p>
+        </div>
+      </header>
+
+      
+      <section aria-labelledby="why-heading">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="section-tag">Por que avaliar?</span>
+            <h2 id="why-heading">Seu feedback transforma a DevBakery</h2>
+            <p>
+              Cada avaliação nos ajuda a entregar experiências ainda melhores.
+            </p>
+          </header>
+
+          <div class="feedback-cards">
+            <article class="feedback-info-card reveal">
+              <span class="icon">🔍</span>
+              <h3>Melhoria Contínua</h3>
+              <p>
+                Identificamos oportunidades de melhoria com base nas suas
+                avaliações.
+              </p>
+            </article>
+            <article
+              class="feedback-info-card reveal"
+              style="transition-delay: 0.15s"
+            >
+              <span class="icon">💛</span>
+              <h3>Reconhecemos Elogios</h3>
+              <p>
+                Seus elogios motivam nossa equipe a manter o alto padrão de
+                qualidade.
+              </p>
+            </article>
+            <article
+              class="feedback-info-card reveal"
+              style="transition-delay: 0.3s"
+            >
+              <span class="icon">🎁</span>
+              <h3>Clientes Avaliadores</h3>
+              <p>
+                Avaliações geram pontos no nosso programa de fidelidade
+                DevPoints.
+              </p>
+            </article>
+          </div>
+
+          
+          <div class="form-card reveal">
+            <h2 class="form-title">⭐ Formulário de Feedback</h2>
+            <p class="form-subtitle">
+              Compartilhe sua experiência. Leva menos de 2 minutos!
+            </p>
+
+            <form
+              novalidate
+              data-modal="modalFeedback"
+              aria-label="Formulário de feedback"
+            >
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="f-nome">
+                    Nome Completo <span class="required-star">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="f-nome"
+                    name="nome"
+                    placeholder="Seu nome completo"
+                    required
+                    aria-required="true"
+                    autocomplete="name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="f-email">
+                    E-mail <span class="required-star">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="f-email"
+                    name="email"
+                    placeholder="seu@email.com"
+                    required
+                    aria-required="true"
+                    autocomplete="email"
+                  />
+                </div>
+
+                <div class="form-group full">
+                  <label for="f-produto">
+                    Produto / Serviço Avaliado
+                    <span class="required-star">*</span>
+                  </label>
+                  <select
+                    id="f-produto"
+                    name="produto"
+                    required
+                    aria-required="true"
+                  >
+                    <option value="" disabled selected>
+                      Selecione o que deseja avaliar…
+                    </option>
+                    <optgroup label="Produtos">
+                      <option value="paes">🍞 Pães Artesanais</option>
+                      <option value="croissants">🥐 Croissants</option>
+                      <option value="bolos">🎂 Bolos Personalizados</option>
+                      <option value="tortas">🥧 Tortas</option>
+                      <option value="doces">🍫 Doces e Brigadeiros</option>
+                      <option value="salgados">🥖 Salgados</option>
+                    </optgroup>
+                    <optgroup label="Serviços">
+                      <option value="atendimento">
+                        😊 Atendimento na Loja
+                      </option>
+                      <option value="entrega">🚚 Entrega em Domicílio</option>
+                      <option value="app">📱 Site / Pedidos Online</option>
+                      <option value="geral">✨ Experiência Geral</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                
+                <div class="form-group full">
+                  <label id="rating-label">
+                    Avaliação Geral <span class="required-star">*</span>
+                  </label>
+                  <div
+                    class="rating-display"
+                    role="group"
+                    aria-labelledby="rating-label"
+                  >
+                    <div
+                      class="star-rating"
+                      aria-label="Selecione de 1 a 5 estrelas"
+                    >
+                      <input
+                        type="radio"
+                        id="star5"
+                        name="avaliacao"
+                        value="5"
+                        required
+                        aria-label="5 estrelas — Excelente"
+                      />
+                      <label
+                        for="star5"
+                        title="5 — Excelente"
+                        aria-hidden="true"
+                        >★</label
+                      >
+                      <input
+                        type="radio"
+                        id="star4"
+                        name="avaliacao"
+                        value="4"
+                        aria-label="4 estrelas — Muito bom"
+                      />
+                      <label
+                        for="star4"
+                        title="4 — Muito bom"
+                        aria-hidden="true"
+                        >★</label
+                      >
+                      <input
+                        type="radio"
+                        id="star3"
+                        name="avaliacao"
+                        value="3"
+                        aria-label="3 estrelas — Bom"
+                      />
+                      <label for="star3" title="3 — Bom" aria-hidden="true"
+                        >★</label
+                      >
+                      <input
+                        type="radio"
+                        id="star2"
+                        name="avaliacao"
+                        value="2"
+                        aria-label="2 estrelas — Regular"
+                      />
+                      <label for="star2" title="2 — Regular" aria-hidden="true"
+                        >★</label
+                      >
+                      <input
+                        type="radio"
+                        id="star1"
+                        name="avaliacao"
+                        value="1"
+                        aria-label="1 estrela — Ruim"
+                      />
+                      <label for="star1" title="1 — Ruim" aria-hidden="true"
+                        >★</label
+                      >
+                    </div>
+                    <span class="rating-label-text" id="ratingText"
+                      >Clique nas estrelas para avaliar</span
+                    >
+                  </div>
+                </div>
+
+                
+                <div class="form-group full">
+                  <label
+                    >O que você mais gostou?
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                      "
+                      >(opcional)</span
+                    ></label
+                  >
+                  <div
+                    class="checkbox-group"
+                    role="group"
+                    aria-label="Aspectos positivos"
+                  >
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="gostou" value="sabor" />
+                      <span class="check-dot"></span>
+                      😋 Sabor
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="gostou" value="qualidade" />
+                      <span class="check-dot"></span>
+                      ✨ Qualidade
+                    </label>
+                    <label class="checkbox-option">
+                      <input
+                        type="checkbox"
+                        name="gostou"
+                        value="apresentacao"
+                      />
+                      <span class="check-dot"></span>
+                      🎨 Apresentação
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="gostou" value="preco" />
+                      <span class="check-dot"></span>
+                      💰 Preço justo
+                    </label>
+                    <label class="checkbox-option">
+                      <input
+                        type="checkbox"
+                        name="gostou"
+                        value="atendimento"
+                      />
+                      <span class="check-dot"></span>
+                      😊 Atendimento
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="gostou" value="entrega" />
+                      <span class="check-dot"></span>
+                      🚚 Entrega rápida
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group full">
+                  <label for="f-comentario"
+                    >Comentário
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                      "
+                      >(opcional)</span
+                    ></label
+                  >
+                  <textarea
+                    id="f-comentario"
+                    name="comentario"
+                    placeholder="Conte-nos mais sobre sua experiência. O que podemos melhorar? O que amou?"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <div class="form-group full">
+                  <label for="f-indicaria"
+                    >Você indicaria a DevBakery para amigos?</label
+                  >
+                  <select id="f-indicaria" name="indicaria">
+                    <option value="" disabled selected>Selecione…</option>
+                    <option value="sim_com_certeza">
+                      ✅ Sim, com certeza!
+                    </option>
+                    <option value="sim_talvez">🤔 Provavelmente sim</option>
+                    <option value="nao_tenho_certeza">
+                      😐 Não tenho certeza
+                    </option>
+                    <option value="nao">❌ Não indicaria</option>
+                  </select>
+                </div>
+              </div>
+
+              <p
+                style="
+                  font-size: 0.82rem;
+                  color: var(--text-muted);
+                  margin-top: 8px;
+                "
+              >
+                <span style="color: var(--secondary)">*</span> Campos
+                obrigatórios
+              </p>
+
+              <button type="submit" class="btn-submit">
+                ⭐ Enviar Avaliação
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🥐</div>
+            Dev<span style="color: var(--accent)">Bakery</span>
+          </a>
+          <p>Pão artesanal com sabor, tradição e carinho. Desde 2018.</p>
+          <div class="footer-social">
+            <a class="social-btn" href="#" aria-label="Instagram">📷</a>
+            <a class="social-btn" href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <nav class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <address class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="#">📍 Rua Gastão da Cunha, 123</a></li>
+            <li><a href="tel:+5511999999999">📞 (21) 99999-9999</a></li>
+          </ul>
+        </address>
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul>
+            <li><a href="#">Seg–Sáb: 6h às 20h</a></li>
+            <li><a href="#">Domingo: 7h às 14h</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 DevBakery. Feito com 🧡 e muito fermento.</p>
+      </div>
+    </footer>
+
+    
+    <div
+      class="modal-overlay"
+      id="modalFeedback"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalFeedbackTitle"
+    >
+      <div class="modal">
+        <div class="modal-icon-wrap" aria-hidden="true">⭐</div>
+        <h3 id="modalFeedbackTitle">Obrigado pelo Feedback!</h3>
+        <p>
+          Sua avaliação foi registrada com sucesso! Cada opinião é muito
+          importante para a gente crescer e melhorar sempre.
+        </p>
+        <button class="modal-close" onclick="closeModal('modalFeedback')">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Star rating label update
+      const ratingLabels = {
+        1: "😞 Ruim — Ficamos tristes, vamos melhorar!",
+        2: "😐 Regular — Temos muito a melhorar",
+        3: "🙂 Bom — Obrigado!",
+        4: "😊 Muito bom — Ficamos felizes!",
+        5: "🤩 Excelente — Adoramos você!",
+      };
+
+      document.querySelectorAll(".star-rating input").forEach((input) => {
+        input.addEventListener("change", () => {
+          const text = document.getElementById("ratingText");
+          if (text) text.textContent = ratingLabels[input.value] || "";
+        });
+      });
+    </script>
+  </body>
+</html>
