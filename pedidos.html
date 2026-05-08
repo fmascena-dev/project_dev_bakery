@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Faça seu pedido especial na DevBakery. Bolos, tortas e muito mais personalizados para você."
+    />
+    <title>Pedidos Especiais — DevBakery</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">🥐</div>
+          Dev<span>Bakery</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="pedidos.html" class="active">Pedidos</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-theme" aria-label="Alternar tema">🌙</button>
+          <a href="pedidos.html" class="btn-nav active">🛍️ Fazer Pedido</a>
+          <button
+            class="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html">🏠 Início</a>
+      <a href="index.html#produtos">🍞 Produtos</a>
+      <a href="index.html#sobre">💛 Sobre</a>
+      <a href="pedidos.html" class="active">🛍️ Pedidos</a>
+      <a href="feedback.html">⭐ Feedback</a>
+      <a href="cadastro.html">👤 Cadastro</a>
+      <a href="contato.html">📞 Contato</a>
+    </nav>
+
+    <main>
+      
+      <header class="page-hero">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Caminho da página">
+            <a href="index.html">Início</a>
+            <span>›</span>
+            <span aria-current="page">Pedidos Especiais</span>
+          </nav>
+          <h1>Pedidos Especiais</h1>
+          <p>
+            Monte seu pedido personalizado. Bolos, tortas e encomendas feitas do
+            jeito que você imaginar!
+          </p>
+        </div>
+      </header>
+
+      
+      <section aria-labelledby="pedidos-heading">
+        <div class="container" style="max-width: 860px">
+          <div class="form-card reveal">
+            <h2 class="form-title" id="pedidos-heading">
+              🎂 Formulário de Pedido Especial
+            </h2>
+            <p class="form-subtitle">
+              Preencha todas as informações para garantir que seu pedido seja
+              perfeito. Entraremos em contato para confirmar os detalhes.
+            </p>
+
+            <form
+              novalidate
+              data-modal="modalPedido"
+              aria-label="Formulário de pedido especial"
+            >
+             
+              <fieldset class="form-section">
+                <legend class="form-section-title">👤 Dados Pessoais</legend>
+                <div class="form-grid">
+                  <div class="form-group full">
+                    <label for="p-nome">Nome Completo</label>
+                    <input
+                      type="text"
+                      id="p-nome"
+                      name="nome"
+                      placeholder="Seu nome completo"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="p-telefone">Telefone</label>
+                    <input
+                      type="tel"
+                      id="p-telefone"
+                      name="telefone"
+                      placeholder="(21) 99999-9999"
+                      autocomplete="tel"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="p-email">E-mail</label>
+                    <input
+                      type="email"
+                      id="p-email"
+                      name="email"
+                      placeholder="seu@email.com"
+                      autocomplete="email"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              
+              <fieldset class="form-section">
+                <legend class="form-section-title">
+                  🛍️ Detalhes do Pedido
+                </legend>
+                <div class="form-grid">
+                  
+                  <div class="form-group full">
+                    <label
+                      >Tipo de Produto
+                      <span class="required-star">*</span></label
+                    >
+                    <div
+                      class="radio-group"
+                      role="radiogroup"
+                      aria-label="Tipo de produto"
+                    >
+                      <label class="radio-option">
+                        <input
+                          type="radio"
+                          name="tipo_produto"
+                          value="bolo"
+                          required
+                        />
+                        <span class="radio-dot"></span>
+                        🎂 Bolo
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tipo_produto" value="torta" />
+                        <span class="radio-dot"></span>
+                        🥧 Torta
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tipo_produto" value="paes" />
+                        <span class="radio-dot"></span>
+                        🍞 Pães
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tipo_produto" value="doces" />
+                        <span class="radio-dot"></span>
+                        🍫 Doces
+                      </label>
+                      <label class="radio-option">
+                        <input
+                          type="radio"
+                          name="tipo_produto"
+                          value="salgados"
+                        />
+                        <span class="radio-dot"></span>
+                        🥖 Salgados
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tipo_produto" value="outro" />
+                        <span class="radio-dot"></span>
+                        ✨ Outro
+                      </label>
+                    </div>
+                  </div>
+
+                  
+                  <div class="form-group full">
+                    <label for="sabor"
+                      >Sabor / Recheio Principal
+                      <span class="required-star">*</span></label
+                    >
+                    <select
+                      id="sabor"
+                      name="sabor"
+                      required
+                      aria-required="true"
+                    >
+                      <option value="" disabled selected>
+                        Selecione o sabor…
+                      </option>
+                      <optgroup label="Clássicos">
+                        <option value="chocolate">🍫 Chocolate Belga</option>
+                        <option value="baunilha">
+                          🤍 Baunilha com Morango
+                        </option>
+                        <option value="limao">🍋 Limão Siciliano</option>
+                        <option value="maracuja">🟡 Maracujá</option>
+                      </optgroup>
+                      <optgroup label="Especiais">
+                        <option value="red_velvet">❤️ Red Velvet</option>
+                        <option value="doce_leite">🤎 Doce de Leite</option>
+                        <option value="ninho">
+                          🤍 Leite Ninho com Nutella
+                        </option>
+                        <option value="oreo">⚫ Oreo</option>
+                      </optgroup>
+                      <optgroup label="Salgados">
+                        <option value="frango">🐔 Frango com Catupiry</option>
+                        <option value="presunto">🥩 Presunto e Queijo</option>
+                        <option value="queijo">🧀 Queijo Especial</option>
+                      </optgroup>
+                      <option value="outro_sabor">
+                        💬 Outro (informar nas obs.)
+                      </option>
+                    </select>
+                  </div>
+
+                  
+                  <div class="form-group full">
+                    <label
+                      >Tamanho / Quantidade
+                      <span class="required-star">*</span></label
+                    >
+                    <div
+                      class="radio-group"
+                      role="radiogroup"
+                      aria-label="Tamanho do pedido"
+                    >
+                      <label class="radio-option">
+                        <input type="radio" name="tamanho" value="p" required />
+                        <span class="radio-dot"></span>
+                        🟢 Pequeno (10 porções)
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tamanho" value="m" />
+                        <span class="radio-dot"></span>
+                        🟡 Médio (20 porções)
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tamanho" value="g" />
+                        <span class="radio-dot"></span>
+                        🟠 Grande (30 porções)
+                      </label>
+                      <label class="radio-option">
+                        <input type="radio" name="tamanho" value="gg" />
+                        <span class="radio-dot"></span>
+                        🔴 Extra Grande (50+ porções)
+                      </label>
+                    </div>
+                  </div>
+
+                  
+                  <div class="form-group full">
+                    <label for="data_entrega">
+                      Data de Entrega <span class="required-star">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      id="data_entrega"
+                      name="data_entrega"
+                      required
+                      aria-required="true"
+                      aria-describedby="data-hint"
+                    />
+                    <small
+                      id="data-hint"
+                      style="color: var(--text-muted); font-size: 0.8rem"
+                      >⚠️ Pedidos precisam ser feitos com no mínimo 3 dias de
+                      antecedência.</small
+                    >
+                  </div>
+                </div>
+              </fieldset>
+
+              
+              <fieldset class="form-section">
+                <legend class="form-section-title">
+                  📝 Informações Adicionais
+                </legend>
+                <div class="form-grid">
+                  <div class="form-group full">
+                    <label for="obs">Observações Especiais</label>
+                    <textarea
+                      id="obs"
+                      name="observacoes"
+                      placeholder="Ex: tema do bolo, mensagem para escrever, restrições alimentares, detalhes de decoração, horário preferencial de entrega…"
+                      rows="4"
+                    ></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="orcamento">Orçamento Máximo (R$)</label>
+                    <input
+                      type="number"
+                      id="orcamento"
+                      name="orcamento"
+                      placeholder="Ex: 150"
+                      min="0"
+                      step="0.01"
+                      aria-describedby="orcamento-hint"
+                    />
+                    <small
+                      id="orcamento-hint"
+                      style="color: var(--text-muted); font-size: 0.8rem"
+                      >Opcional — nos ajuda a oferecer a melhor opção para
+                      você.</small
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="forma_entrega">Forma de Entrega</label>
+                    <select id="forma_entrega" name="forma_entrega">
+                      <option value="" disabled selected>Selecione…</option>
+                      <option value="retirada">🏠 Retirada na loja</option>
+                      <option value="entrega">🚚 Entrega em domicílio</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <p style="font-size: 0.82rem; color: var(--text-muted)">
+                <span style="color: var(--secondary)">*</span> Campos
+                obrigatórios
+              </p>
+
+              <button type="submit" class="btn-submit">🛍️ Enviar Pedido</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🥐</div>
+            Dev<span style="color: var(--accent)">Bakery</span>
+          </a>
+          <p>Pão artesanal com sabor, tradição e carinho. Desde 2018.</p>
+          <div class="footer-social">
+            <a class="social-btn" href="#" aria-label="Instagram">📷</a>
+            <a class="social-btn" href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <nav class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <address class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="#">📍 Rua Gastão da Cunha, 123</a></li>
+            <li><a href="tel:+5511999999999">📞 (21) 99999-9999</a></li>
+          </ul>
+        </address>
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul>
+            <li><a href="#">Seg–Sáb: 6h às 20h</a></li>
+            <li><a href="#">Domingo: 7h às 14h</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 DevBakery. Feito com 🧡 e muito fermento.</p>
+      </div>
+    </footer>
+
+    
+    <div
+      class="modal-overlay"
+      id="modalPedido"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalPedidoTitle"
+    >
+      <div class="modal">
+        <div class="modal-icon-wrap" aria-hidden="true">🎉</div>
+        <h3 id="modalPedidoTitle">Pedido Recebido!</h3>
+        <p>
+          Seu pedido especial foi enviado com sucesso! Nossa equipe entrará em
+          contato em até <strong>2 horas úteis</strong> para confirmar os
+          detalhes e o valor.
+        </p>
+        <button class="modal-close" onclick="closeModal('modalPedido')">
+          Perfeito!
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // set min date to 3 days from now
+      const dateInput = document.getElementById("data_entrega");
+      if (dateInput) {
+        const min = new Date();
+        min.setDate(min.getDate() + 3);
+        dateInput.min = min.toISOString().split("T")[0];
+      }
+    </script>
+  </body>
+</html>
