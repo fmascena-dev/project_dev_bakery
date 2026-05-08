@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cadastre-se na DevBakery e aproveite vantagens exclusivas, promoções e pedidos facilitados."
+    />
+    <title>Cadastro — DevBakery</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .steps-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 40px;
+      }
+
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+      }
+
+      .step-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--border);
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: all 0.3s;
+        border: 2px solid var(--border);
+        position: relative;
+        z-index: 1;
+      }
+
+      .step.active .step-circle {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(139, 69, 19, 0.15);
+      }
+
+      .step.done .step-circle {
+        background: #22c55e;
+        color: white;
+        border-color: #22c55e;
+      }
+
+      .step-label {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .step.active .step-label {
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .step.done .step-label {
+        color: #22c55e;
+      }
+
+      .step-line {
+        flex: 1;
+        height: 2px;
+        background: var(--border);
+        min-width: 40px;
+        max-width: 80px;
+        margin-bottom: 24px;
+        transition: background 0.3s;
+      }
+
+      .step-line.done {
+        background: #22c55e;
+      }
+
+      /* benefits sidebar */
+      .cadastro-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .benefits-card {
+        background: linear-gradient(
+          160deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        border-radius: var(--radius-lg);
+        padding: 32px 24px;
+        color: white;
+        position: sticky;
+        top: calc(var(--nav-height) + 24px);
+      }
+
+      .benefits-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 24px;
+        color: white;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .benefit-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .benefit-text strong {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+      }
+      .benefit-text span {
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
+
+      .benefit-divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 20px 0;
+      }
+
+      .benefits-cta {
+        font-size: 0.85rem;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .estado-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+      }
+
+      @media (max-width: 860px) {
+        .cadastro-layout {
+          grid-template-columns: 1fr;
+        }
+        .benefits-card {
+          position: static;
+        }
+        .steps-bar {
+          gap: 4px;
+        }
+        .step-line {
+          min-width: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">🥐</div>
+          Dev<span>Bakery</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="cadastro.html" class="active">Cadastro</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-theme" aria-label="Alternar tema">🌙</button>
+          <a href="pedidos.html" class="btn-nav">🛍️ Fazer Pedido</a>
+          <button
+            class="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html">🏠 Início</a>
+      <a href="index.html#produtos">🍞 Produtos</a>
+      <a href="index.html#sobre">💛 Sobre</a>
+      <a href="pedidos.html">🛍️ Pedidos</a>
+      <a href="feedback.html">⭐ Feedback</a>
+      <a href="cadastro.html" class="active">👤 Cadastro</a>
+      <a href="contato.html">📞 Contato</a>
+    </nav>
+
+    <main>
+      
+      <header class="page-hero">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Caminho da página">
+            <a href="index.html">Início</a>
+            <span>›</span>
+            <span aria-current="page">Cadastro</span>
+          </nav>
+          <h1>Crie sua Conta</h1>
+          <p>
+            Faça parte da família DevBakery e aproveite vantagens exclusivas!
+          </p>
+        </div>
+      </header>
+
+      <section aria-labelledby="cadastro-heading">
+        <div class="container">
+          
+          <div
+            class="steps-bar reveal"
+            role="list"
+            aria-label="Etapas do cadastro"
+          >
+            <div class="step active" role="listitem">
+              <div class="step-circle">1</div>
+              <span class="step-label">Dados Pessoais</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" role="listitem">
+              <div class="step-circle">2</div>
+              <span class="step-label">Endereço</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" role="listitem">
+              <div class="step-circle">3</div>
+              <span class="step-label">Preferências</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" role="listitem">
+              <div class="step-circle">4</div>
+              <span class="step-label">Termos</span>
+            </div>
+          </div>
+
+          <div class="cadastro-layout">
+            
+            <aside
+              class="benefits-card reveal-left"
+              aria-label="Vantagens do cadastro"
+            >
+              <h3>🎁 Vantagens do Cadastro</h3>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-text">
+                  <strong>10% de Desconto</strong>
+                  <span>No primeiro pedido após cadastro</span>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">⭐</div>
+                <div class="benefit-text">
+                  <strong>DevPoints</strong>
+                  <span>Acumule pontos em cada compra</span>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">🎂</div>
+                <div class="benefit-text">
+                  <strong>Aniversário Especial</strong>
+                  <span>Brinde surpresa no seu dia</span>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">🔔</div>
+                <div class="benefit-text">
+                  <strong>Ofertas Exclusivas</strong>
+                  <span>Promoções antes de todo mundo</span>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">🚚</div>
+                <div class="benefit-text">
+                  <strong>Entrega Facilitada</strong>
+                  <span>Endereço salvo para pedidos rápidos</span>
+                </div>
+              </div>
+
+              <div class="benefit-divider"></div>
+              <p class="benefits-cta">
+                Junte-se a mais de 2.500 clientes que já fazem parte da família
+                DevBakery! 🧡
+              </p>
+            </aside>
+
+            
+            <div class="reveal-right">
+              <div class="form-card">
+                <h2 class="form-title" id="cadastro-heading">
+                  👤 Formulário de Cadastro
+                </h2>
+                <p class="form-subtitle">
+                  Preencha todas as informações para criar sua conta.
+                </p>
+
+                <form
+                  novalidate
+                  data-modal="modalCadastro"
+                  aria-label="Formulário de cadastro"
+                >
+                  
+                  <fieldset class="form-section">
+                    <legend class="form-section-title">
+                      👤 Dados Pessoais
+                    </legend>
+                    <div class="form-grid">
+                      <div class="form-group full">
+                        <label for="c-nome">Nome Completo</label>
+                        <input
+                          type="text"
+                          id="c-nome"
+                          name="nome"
+                          placeholder="Seu nome completo"
+                          required
+                          autocomplete="name"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="c-email">E-mail</label>
+                        <input
+                          type="email"
+                          id="c-email"
+                          name="email"
+                          placeholder="seu@email.com"
+                          required
+                          autocomplete="email"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="c-telefone">Telefone</label>
+                        <input
+                          type="tel"
+                          id="c-telefone"
+                          name="telefone"
+                          placeholder="(21) 99999-9999"
+                          autocomplete="tel"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="c-nascimento">Data de Nascimento</label>
+                        <input
+                          type="date"
+                          id="c-nascimento"
+                          name="nascimento"
+                          autocomplete="bday"
+                          aria-describedby="nascimento-hint"
+                        />
+                        <small
+                          id="nascimento-hint"
+                          style="color: var(--text-muted); font-size: 0.8rem"
+                          >🎂 Usaremos para enviar seu brinde de
+                          aniversário!</small
+                        >
+                      </div>
+
+                      <div class="form-group">
+                        <label for="c-senha">Senha</label>
+                        <input
+                          type="password"
+                          id="c-senha"
+                          name="senha"
+                          placeholder="Mínimo 8 caracteres"
+                          required
+                          minlength="8"
+                          autocomplete="new-password"
+                          aria-describedby="senha-hint"
+                        />
+                        <small
+                          id="senha-hint"
+                          style="color: var(--text-muted); font-size: 0.8rem"
+                          >Use letras, números e símbolos</small
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  
+                  <fieldset class="form-section">
+                    <legend class="form-section-title">📍 Endereço</legend>
+                    <div class="form-grid">
+                      <div
+                        class="form-group"
+                        style="
+                          grid-column: 1 / -1;
+                          display: grid;
+                          grid-template-columns: 1fr auto;
+                          gap: 12px;
+                          align-items: end;
+                        "
+                      >
+                        <div class="form-group" style="margin: 0">
+                          <label for="cep">CEP</label>
+                          <input
+                            type="text"
+                            id="cep"
+                            name="cep"
+                            placeholder="00000-000"
+                            maxlength="9"
+                            autocomplete="postal-code"
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          id="btn-cep"
+                          class="btn-sm"
+                          style="height: 48px; white-space: nowrap"
+                          aria-label="Buscar endereço pelo CEP"
+                        >
+                          🔍 Buscar
+                        </button>
+                      </div>
+
+                      <div class="form-group full">
+                        <label for="rua">Rua / Logradouro</label>
+                        <input
+                          type="text"
+                          id="rua"
+                          name="rua"
+                          placeholder="Nome da sua rua"
+                          autocomplete="street-address"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="numero">Número</label>
+                        <input
+                          type="text"
+                          id="numero"
+                          name="numero"
+                          placeholder="Ex: 142"
+                          autocomplete="address-line2"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="complemento">Complemento</label>
+                        <input
+                          type="text"
+                          id="complemento"
+                          name="complemento"
+                          placeholder="Apto, Bloco, Casa…"
+                          autocomplete="address-line3"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input
+                          type="text"
+                          id="bairro"
+                          name="bairro"
+                          placeholder="Seu bairro"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input
+                          type="text"
+                          id="cidade"
+                          name="cidade"
+                          placeholder="Sua cidade"
+                          autocomplete="address-level2"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="estado">Estado (UF)</label>
+                        <select
+                          id="estado"
+                          name="estado"
+                          autocomplete="address-level1"
+                        >
+                          <option value="" disabled selected>Selecione…</option>
+                          <option value="AC">AC — Acre</option>
+                          <option value="AL">AL — Alagoas</option>
+                          <option value="AP">AP — Amapá</option>
+                          <option value="AM">AM — Amazonas</option>
+                          <option value="BA">BA — Bahia</option>
+                          <option value="CE">CE — Ceará</option>
+                          <option value="DF">DF — Distrito Federal</option>
+                          <option value="ES">ES — Espírito Santo</option>
+                          <option value="GO">GO — Goiás</option>
+                          <option value="MA">MA — Maranhão</option>
+                          <option value="MT">MT — Mato Grosso</option>
+                          <option value="MS">MS — Mato Grosso do Sul</option>
+                          <option value="MG">MG — Minas Gerais</option>
+                          <option value="PA">PA — Pará</option>
+                          <option value="PB">PB — Paraíba</option>
+                          <option value="PR">PR — Paraná</option>
+                          <option value="PE">PE — Pernambuco</option>
+                          <option value="PI">PI — Piauí</option>
+                          <option value="RJ">RJ — Rio de Janeiro</option>
+                          <option value="RN">RN — Rio Grande do Norte</option>
+                          <option value="RS">RS — Rio Grande do Sul</option>
+                          <option value="RO">RO — Rondônia</option>
+                          <option value="RR">RR — Roraima</option>
+                          <option value="SC">SC — Santa Catarina</option>
+                          <option value="SP" selected>SP — São Paulo</option>
+                          <option value="SE">SE — Sergipe</option>
+                          <option value="TO">TO — Tocantins</option>
+                        </select>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  
+                  <fieldset class="form-section">
+                    <legend class="form-section-title">❤️ Preferências</legend>
+                    <div class="form-grid">
+                      <div class="form-group full">
+                        <label
+                          >Tipos de produtos preferidos
+                          <span
+                            style="
+                              color: var(--text-muted);
+                              font-size: 0.8rem;
+                              font-weight: 400;
+                            "
+                            >(opcional — marque todos que gostar)</span
+                          ></label
+                        >
+                        <div
+                          class="checkbox-group"
+                          role="group"
+                          aria-label="Produtos preferidos"
+                        >
+                          <label class="checkbox-option">
+                            <input
+                              type="checkbox"
+                              name="pref"
+                              value="paes_artesanais"
+                            />
+                            <span class="check-dot"></span>
+                            🍞 Pães Artesanais
+                          </label>
+                          <label class="checkbox-option">
+                            <input
+                              type="checkbox"
+                              name="pref"
+                              value="croissants"
+                            />
+                            <span class="check-dot"></span>
+                            🥐 Croissants
+                          </label>
+                          <label class="checkbox-option">
+                            <input type="checkbox" name="pref" value="bolos" />
+                            <span class="check-dot"></span>
+                            🎂 Bolos
+                          </label>
+                          <label class="checkbox-option">
+                            <input type="checkbox" name="pref" value="tortas" />
+                            <span class="check-dot"></span>
+                            🥧 Tortas
+                          </label>
+                          <label class="checkbox-option">
+                            <input type="checkbox" name="pref" value="doces" />
+                            <span class="check-dot"></span>
+                            🍫 Doces
+                          </label>
+                          <label class="checkbox-option">
+                            <input
+                              type="checkbox"
+                              name="pref"
+                              value="salgados"
+                            />
+                            <span class="check-dot"></span>
+                            🥖 Salgados
+                          </label>
+                          <label class="checkbox-option">
+                            <input
+                              type="checkbox"
+                              name="pref"
+                              value="sem_gluten"
+                            />
+                            <span class="check-dot"></span>
+                            🌾 Sem Glúten
+                          </label>
+                          <label class="checkbox-option">
+                            <input type="checkbox" name="pref" value="vegano" />
+                            <span class="check-dot"></span>
+                            🌱 Vegano
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  
+                  <fieldset
+                    class="form-section"
+                    style="
+                      border-bottom: none;
+                      margin-bottom: 0;
+                      padding-bottom: 0;
+                    "
+                  >
+                    <legend class="form-section-title">
+                      📋 Termos e Preferências
+                    </legend>
+
+                    <label class="toggle-wrap" for="aceite-promocoes">
+                      <input
+                        type="checkbox"
+                        id="aceite-promocoes"
+                        name="aceite_promocoes"
+                      />
+                      <div class="toggle-switch" role="presentation"></div>
+                      <span class="toggle-label">
+                        <strong>Aceito receber promoções e novidades</strong
+                        ><br />
+                        Enviaremos e-mails com ofertas exclusivas, lançamentos e
+                        novidades da DevBakery. Você pode cancelar a qualquer
+                        momento.
+                      </span>
+                    </label>
+
+                    <label class="toggle-wrap" for="aceite-termos">
+                      <input
+                        type="checkbox"
+                        id="aceite-termos"
+                        name="aceite_termos"
+                        required
+                        aria-required="true"
+                      />
+                      <div class="toggle-switch" role="presentation"></div>
+                      <span class="toggle-label">
+                        <strong
+                          >Li e aceito os Termos de Uso e a Política de
+                          Privacidade
+                          <span style="color: var(--secondary)">*</span></strong
+                        ><br />
+                        Ao se cadastrar, você concorda com nossos
+                        <a href="#" onclick="event.stopPropagation()"
+                          >Termos de Uso</a
+                        >
+                        e
+                        <a href="#" onclick="event.stopPropagation()"
+                          >Política de Privacidade</a
+                        >.
+                      </span>
+                    </label>
+                  </fieldset>
+
+                  <p
+                    style="
+                      font-size: 0.82rem;
+                      color: var(--text-muted);
+                      margin-top: 16px;
+                    "
+                  >
+                    <span style="color: var(--secondary)">*</span> Campos
+                    obrigatórios
+                  </p>
+
+                  <button type="submit" class="btn-submit">
+                    🎉 Criar Minha Conta
+                  </button>
+
+                  <p
+                    style="
+                      text-align: center;
+                      margin-top: 20px;
+                      font-size: 0.9rem;
+                      color: var(--text-muted);
+                    "
+                  >
+                    Já tem uma conta?
+                    <a href="#" style="color: var(--primary); font-weight: 600"
+                      >Faça login</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🥐</div>
+            Dev<span style="color: var(--accent)">Bakery</span>
+          </a>
+          <p>Pão artesanal com sabor, tradição e carinho. Desde 2018.</p>
+          <div class="footer-social">
+            <a class="social-btn" href="#" aria-label="Instagram">📷</a>
+            <a class="social-btn" href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <nav class="footer-col">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <address class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="#">📍 Rua Gastão da Cunha, 123</a></li>
+            <li><a href="tel:+5511999999999">📞 (21) 99999-9999</a></li>
+          </ul>
+        </address>
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul>
+            <li><a href="#">Seg–Sáb: 6h às 20h</a></li>
+            <li><a href="#">Domingo: 7h às 14h</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 DevBakery. Feito com 🧡 e muito fermento.</p>
+      </div>
+    </footer>
+
+    
+    <div
+      class="modal-overlay"
+      id="modalCadastro"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalCadastroTitle"
+    >
+      <div class="modal">
+        <div class="modal-icon-wrap" aria-hidden="true">🎉</div>
+        <h3 id="modalCadastroTitle">Bem-vindo à Família!</h3>
+        <p>
+          Seu cadastro foi realizado com <strong>sucesso</strong>! Você receberá
+          um e-mail de confirmação em breve. Aproveite
+          <strong>10% de desconto</strong> no seu primeiro pedido!
+        </p>
+        <button class="modal-close" onclick="closeModal('modalCadastro')">
+          Começar a explorar!
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Steps visual update on form scroll/focus
+      const stepSections = document.querySelectorAll("fieldset.form-section");
+      const stepCircles = document.querySelectorAll(".step");
+
+      function updateSteps(activeIndex) {
+        stepCircles.forEach((step, i) => {
+          step.classList.remove("active", "done");
+          if (i < activeIndex) step.classList.add("done");
+          else if (i === activeIndex) step.classList.add("active");
+        });
+
+        document.querySelectorAll(".step-line").forEach((line, i) => {
+          line.classList.toggle("done", i < activeIndex);
+        });
+      }
+
+      stepSections.forEach((section, index) => {
+        section.addEventListener("focusin", () => updateSteps(index));
+      });
+
+      // CEP lookup simulation
+      document.getElementById("btn-cep").addEventListener("click", () => {
+        const cep = document.getElementById("cep").value.replace(/\D/g, "");
+        if (cep.length !== 8) {
+          showToast("Digite um CEP válido com 8 dígitos.", "warning");
+          return;
+        }
+
+        const btn = document.getElementById("btn-cep");
+        btn.textContent = "⏳";
+        btn.disabled = true;
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then((r) => r.json())
+          .then((data) => {
+            if (data.erro) {
+              showToast("CEP não encontrado.", "error");
+            } else {
+              document.getElementById("rua").value = data.logradouro || "";
+              document.getElementById("bairro").value = data.bairro || "";
+              document.getElementById("cidade").value = data.localidade || "";
+              const estadoSel = document.getElementById("estado");
+              if (data.uf) estadoSel.value = data.uf;
+              showToast("Endereço preenchido automaticamente!", "success");
+            }
+          })
+          .catch(() =>
+            showToast("Erro ao buscar CEP. Preencha manualmente.", "error"),
+          )
+          .finally(() => {
+            btn.textContent = "🔍 Buscar";
+            btn.disabled = false;
+          });
+      });
+
+      // allow CEP enter key
+      document.getElementById("cep").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          document.getElementById("btn-cep").click();
+        }
+      });
+    </script>
+  </body>
+</html>
