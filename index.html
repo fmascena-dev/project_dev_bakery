@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevBakery — Pães artesanais, bolos, tortas e muito mais. Sabor que você sente desde o primeiro olhar."
+    />
+    <title>DevBakery — Sabor Artesanal</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo" aria-label="DevBakery Home">
+          <div class="logo-icon" aria-hidden="true">🥐</div>
+          Dev<span>Bakery</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn-theme" aria-label="Alternar tema">🌙</button>
+          <a href="pedidos.html" class="btn-nav">🛍️ Fazer Pedido</a>
+          <button
+            class="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html" class="active">🏠 Início</a>
+      <a href="#produtos">🍞 Produtos</a>
+      <a href="#sobre">💛 Sobre</a>
+      <a href="pedidos.html">🛍️ Pedidos</a>
+      <a href="feedback.html">⭐ Feedback</a>
+      <a href="cadastro.html">👤 Cadastro</a>
+      <a href="contato.html">📞 Contato</a>
+    </nav>
+
+    <main>
+      
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-content">
+          <div class="hero-badge">Padaria artesanal desde 2018</div>
+          <h1 id="hero-heading">
+            O sabor que você<br />
+            <em>merece todo dia</em>
+          </h1>
+          <p>
+            Pães fresquinhos saídos do forno, bolos especiais e muito carinho em
+            cada receita. Feito com ingredientes selecionados e amor verdadeiro.
+          </p>
+          <div class="hero-actions">
+            <a href="pedidos.html" class="btn-primary">🛍️ Fazer Pedido</a>
+            <a href="#produtos" class="btn-secondary">Ver Cardápio</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number" data-count="2500" data-suffix="+"
+                >0+</span
+              >
+              <span class="stat-label">Clientes</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="6" data-suffix="">0</span>
+              <span class="stat-label">Anos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="120" data-suffix="+"
+                >0+</span
+              >
+              <span class="stat-label">Produtos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div
+            class="hero-image-wrap"
+            role="img"
+            aria-label="Pães artesanais fresquinhos"
+          >
+            <img src="./images/paes-artesanais.jpg" alt="Pães artesanais fresquinhos">
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="produtos" aria-labelledby="products-heading">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="section-tag">Nosso Cardápio</span>
+            <h2 id="products-heading">Feito com amor, entregue com carinho</h2>
+            <p>
+              Cada produto é preparado diariamente com ingredientes frescos e
+              técnicas artesanais tradicionais.
+            </p>
+          </header>
+
+          <div class="products-grid">
+            <article class="product-card reveal">
+              <div
+                class="product-image"
+                role="img"
+                aria-label="Pães artesanais"
+              >
+                🍞
+                <span class="product-badge">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <p class="product-category">Padaria</p>
+                <h3>Pão Artesanal</h3>
+                <p>
+                  Pão de fermentação natural, casquinha crocante e miolo macio.
+                  Feito todo dia de madrugada.
+                </p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 12,90</span>
+                  <a href="pedidos.html" class="btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card reveal" style="transition-delay: 0.1s">
+              <div class="product-image" role="img" aria-label="Croissant">
+                🥐
+                <span class="product-badge">Especial</span>
+              </div>
+              <div class="product-body">
+                <p class="product-category">Viennoiserie</p>
+                <h3>Croissant de Manteiga</h3>
+                <p>
+                  Camadas folhadas e crocantes de manteiga importada. A receita
+                  clássica francesa com toque brasileiro.
+                </p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 8,90</span>
+                  <a href="pedidos.html" class="btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card reveal" style="transition-delay: 0.2s">
+              <div class="product-image" role="img" aria-label="Bolo especial">
+                🎂
+              </div>
+              <div class="product-body">
+                <p class="product-category">Confeitaria</p>
+                <h3>Bolo Especial</h3>
+                <p>
+                  Bolos personalizados para todas as ocasiões. Sabores variados,
+                  decoração sob medida.
+                </p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 89,90</span>
+                  <a href="pedidos.html" class="btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card reveal" style="transition-delay: 0.3s">
+              <div class="product-image" role="img" aria-label="Torta">🥧</div>
+              <div class="product-body">
+                <p class="product-category">Confeitaria</p>
+                <h3>Torta da Casa</h3>
+                <p>
+                  Tortas salgadas e doces, preparadas com recheios generosos e
+                  massa crocante no ponto certo.
+                </p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 45,00</span>
+                  <a href="pedidos.html" class="btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card reveal" style="transition-delay: 0.4s">
+              <div
+                class="product-image"
+                role="img"
+                aria-label="Doces e brigadeiros"
+              >
+                🍫
+                <span class="product-badge">Novidade</span>
+              </div>
+              <div class="product-body">
+                <p class="product-category">Doçaria</p>
+                <h3>Brigadeiros Gourmet</h3>
+                <p>
+                  Brigadeiros artesanais com cobertura de chocolate belga e
+                  toppings especiais. Caixas personalizadas.
+                </p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 4,50</span>
+                  <a href="pedidos.html" class="btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card reveal" style="transition-delay: 0.5s">
+              <div class="product-image" role="img" aria-label="Salgados">
+                🥖
+              </div>
+              <div class="product-body">
+                <p class="product-category">Salgados</p>
+                <h3>Salgados Artesanais</h3>
+                <p>
+                  Coxinhas, esfirras, pão de queijo e muito mais. Frescos,
+                  crocantes e recheados generosamente.
+                </p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 5,50</span>
+                  <a href="pedidos.html" class="btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      
+      <section
+        id="sobre"
+        style="background: var(--bg-secondary)"
+        aria-labelledby="about-heading"
+      >
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-visual reveal-left">
+              <div class="about-image" role="img" aria-label="Nossa padaria">
+                <img src="./images/dev_bakery.png" alt="DevBakery" />
+              </div>
+              <div class="about-badge">
+                <strong>6+</strong>
+                <span>Anos no mercado</span>
+              </div>
+            </div>
+
+            <div class="about-content reveal-right">
+              <span class="section-tag">Nossa História</span>
+              <h2 id="about-heading">
+                Nascemos da paixão pela panificação artesanal
+              </h2>
+              <p>
+                A DevBakery nasceu em 2018 de um sonho simples: levar pães
+                fresquinhos e produtos artesanais de qualidade para a mesa das
+                famílias da cidade.
+              </p>
+              <p>
+                Hoje, com mais de 2.500 clientes fiéis, mantemos o mesmo
+                compromisso: ingredientes selecionados, processos tradicionais e
+                muito carinho em cada receita.
+              </p>
+
+              <div class="about-features">
+                <div class="feature-item">
+                  <div class="feature-icon">🌾</div>
+                  <div class="feature-text">
+                    <strong>Ingredientes Selecionados</strong>
+                    <span>Parcerias com produtores locais</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">🌙</div>
+                  <div class="feature-text">
+                    <strong>Fresquinho Todo Dia</strong>
+                    <span>Produção das 3h da manhã</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">🤝</div>
+                  <div class="feature-text">
+                    <strong>Sem Conservantes</strong>
+                    <span>100% natural e artesanal</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">🚚</div>
+                  <div class="feature-text">
+                    <strong>Entrega Rápida</strong>
+                    <span>Até 2 horas na cidade</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section
+        class="testimonials-section"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="section-tag">Depoimentos</span>
+            <h2 id="testimonials-heading">O que nossos clientes dizem</h2>
+            <p>A satisfação dos nossos clientes é o nosso maior produto.</p>
+          </header>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card reveal">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p>
+                "O pão artesanal da DevBakery mudou minha manhã! Crocante por
+                fora, macio por dentro. Peço toda semana sem falta."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">AM</div>
+                <div class="author-info">
+                  <strong>Ana Martins</strong>
+                  <span>Cliente há 3 anos</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="testimonial-card reveal"
+              style="transition-delay: 0.15s"
+            >
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p>
+                "Encomendei um bolo de aniversário personalizado e superou todas
+                as expectativas. Lindo e delicioso. Recomendo muito!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">CS</div>
+                <div class="author-info">
+                  <strong>Carlos Silva</strong>
+                  <span>Cliente há 1 ano</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="testimonial-card reveal"
+              style="transition-delay: 0.3s"
+            >
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p>
+                "Os croissants são incríveis! Nunca comi nada igual no Brasil.
+                Lembram os da França, mas com aquele gostinho especial daqui."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">LO</div>
+                <div class="author-info">
+                  <strong>Luísa Oliveira</strong>
+                  <span>Cliente há 2 anos</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      
+      <section aria-labelledby="cta-heading">
+        <div class="container">
+          <div class="cta-banner reveal">
+            <h2 id="cta-heading">Quer um pedido especial?</h2>
+            <p>
+              Bolos personalizados, encomendas para eventos e muito mais. Entre
+              em contato e faremos acontecer!
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 16px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <a href="pedidos.html" class="btn-white"
+                >🛍️ Fazer Pedido Especial</a
+              >
+              <a
+                href="contato.html"
+                class="btn-white"
+                style="
+                  background: transparent;
+                  color: white;
+                  border: 2px solid rgba(255, 255, 255, 0.6);
+                "
+                >📞 Falar Conosco</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🥐</div>
+            Dev<span style="color: var(--accent)">Bakery</span>
+          </a>
+          <p>
+            Pão artesanal com sabor, tradição e carinho. Desde 2018 aquecendo as
+            manhãs da cidade.
+          </p>
+          <div class="footer-social" role="list" aria-label="Redes sociais">
+            <a
+              class="social-btn"
+              href="#"
+              role="listitem"
+              aria-label="Instagram"
+              title="Instagram"
+              >📷</a
+            >
+            <a
+              class="social-btn"
+              href="#"
+              role="listitem"
+              aria-label="Facebook"
+              title="Facebook"
+              >👍</a
+            >
+            <a
+              class="social-btn"
+              href="#"
+              role="listitem"
+              aria-label="WhatsApp"
+              title="WhatsApp"
+              >💬</a
+            >
+            <a
+              class="social-btn"
+              href="#"
+              role="listitem"
+              aria-label="TikTok"
+              title="TikTok"
+              >🎵</a
+            >
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Links rápidos">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="pedidos.html">Fazer Pedido</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Páginas">
+          <h4>Páginas</h4>
+          <ul>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-col">
+          <h4>Localização</h4>
+          <ul>
+            <li><a href="#">📍 Rua Gastão da Cunha, 123</a></li>
+            <li><a href="#">🕐 Seg–Sáb: 6h às 20h</a></li>
+            <li><a href="#">☀️ Dom: 7h às 14h</a></li>
+            <li><a href="tel:+5521999999999">📞 (21) 99999-9999</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2024 DevBakery. Feito com 🧡 e muito fermento. Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
